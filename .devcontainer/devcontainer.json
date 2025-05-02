@@ -1,0 +1,8 @@
+{
+  "name": ".NET 9 Codespace",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:9.0", 
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "forwardPorts": [5000, 5001]
+}
