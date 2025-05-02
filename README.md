@@ -13,9 +13,16 @@ cat > .devcontainer/devcontainer.json <<'EOF'
   "features": {
     "ghcr.io/devcontainers/features/git:1": {}
   },
+  "containerEnv": {
+    "ASPNETCORE_URLS": "https://+:5001;http://+:5000",
+    "ASPNETCORE_HTTPS_PORT": "5001"
+  },
   "forwardPorts": [5000, 5001]
 }
 EOF
+
+# Create self-signed cert
+dotnet dev-certs https --trust
 
 # Commit the devcontainer so Codespaces picks it up
 git add .devcontainer/devcontainer.json
