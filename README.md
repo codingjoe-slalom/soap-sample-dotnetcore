@@ -13,7 +13,7 @@ mkdir $APP_NAME && cd $_
 
 # Create a solution container, then a Web API project targeting .NET 9
 dotnet new sln -n $APP_NAME
-dotnet new webapi -n $APP_NAME.Api -f net9.0
+dotnet new webapi -n $APP_NAME.Api -f net8.0
 
 # Add the project to the solution
 dotnet sln add $APP_NAME.Api/$APP_NAME.Api.csproj
@@ -28,11 +28,10 @@ mkdir .devcontainer
 cat > .devcontainer/devcontainer.json <<'EOF'
 {
   "name": ".NET 9 Codespace",
-  "image": "mcr.microsoft.com/devcontainers/dotnet:9.0",  // Microsoft‑maintained image with SDK 9
+  "image": "mcr.microsoft.com/devcontainers/dotnet:9.0",  
   "features": {
     "ghcr.io/devcontainers/features/git:1": {}
   },
-  // Optional: forward common ports
   "forwardPorts": [5000, 5001]
 }
 EOF
