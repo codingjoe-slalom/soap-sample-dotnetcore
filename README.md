@@ -43,7 +43,7 @@ git add .
 git commit -m "Setup starter code"
 git push
 # Rebuild the full codespace
-gh codespace rebuild --ful --confirm
+gh codespace rebuild --full
 
 ```
 
