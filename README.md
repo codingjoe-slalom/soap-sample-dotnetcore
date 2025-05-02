@@ -39,8 +39,11 @@ EOF
 # Commit the devcontainer so Codespaces picks it up
 git add .devcontainer/devcontainer.json
 git commit -m "Add .devcontainer for Codespaces"
+git add .
+git commit -m "Setup starter code"
 git push
-
+# Rebuild the full codespace
+gh codespace rebuild --ful --confirm
 
 ```
 
